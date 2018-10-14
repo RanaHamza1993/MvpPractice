@@ -4,7 +4,7 @@ import com.example.ranahamza.mvppractice.contract.MainActivityContract;
 
 public class MainActivityModel implements MainActivityContract.Model {
     @Override
-    public String getData() {
+    public String getViewData() {
         return "Hello Hamza";
     }
 }

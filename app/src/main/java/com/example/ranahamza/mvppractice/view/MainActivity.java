@@ -3,6 +3,7 @@ package com.example.ranahamza.mvppractice.view;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -21,6 +22,13 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
         setContentView(R.layout.activity_main);
 
         presenter=new MainActivityPresenter(this);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.onClick(v);
+            }
+        });
+
 
     }
 
@@ -36,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
     @Override
     public void setViewData(String data) {
 
+        textView.setAnimation(AnimationUtils.loadAnimation(MainActivity.this,R.anim.fade_in));
         textView.setText(data);
     }
 }
